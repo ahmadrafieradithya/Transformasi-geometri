@@ -1,298 +1,457 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pembelajaran Transformasi Geometri Kelas XI</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Main stylesheet linked above; no external resources used -->
-</head>
-<body>
-  <!-- Header with title and meta info -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1>Pembelajaran Transformasi Geometri Kelas XI</h1>
-        <p class="subtitle">Translasi, Refleksi, Rotasi, dan Dilatasi</p>
-      </div>
-      <div class="meta">
-        <p>Nama: [ISI NAMA SENDIRI]</p>
-        <p>Kelas: XI</p>
-        <p>Tahun Pelajaran: 2026/2027</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- Navigation bar -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <ul class="nav-list">
-        <li><a href="#" data-target="home">Beranda</a></li>
-        <li><a href="#" data-target="translasi">Translasi</a></li>
-        <li><a href="#" data-target="refleksi">Refleksi</a></li>
-        <li><a href="#" data-target="rotasi">Rotasi</a></li>
-        <li><a href="#" data-target="dilatasi">Dilatasi</a></li>
-        <li><a href="#" data-target="latihan">Latihan</a></li>
-        <li><a href="#" data-target="simulator">Simulator</a></li>
-        <li><a href="#" data-target="tentang">Tentang</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main content -->
-  <main>
-    <!-- Beranda -->
-    <section id="home" data-id="home" class="container section spa-section active">
-      <h2>Selamat datang</h2>
-      <p class="lead">Transformasi geometri mempelajari perubahan posisi dan bentuk objek pada bidang koordinat. Website ini membantu siswa memahami konsep melalui visualisasi dan latihan interaktif.</p>
-      <div class="grid home-grid">
-        <div class="card">
-          <h3>Apa itu Transformasi Geometri?</h3>
-          <p>Transformasi geometri adalah operasi yang mengubah posisi atau ukuran objek pada bidang koordinat tanpa mengubah sifat dasar titik-titiknya.</p>
-        </div>
-        <div class="card">
-          <h3>Pentingnya</h3>
-          <p>Membantu memahami konsep berpindah, simetri, rotasi, dan skala yang muncul dalam sains, teknik, seni, dan pemrograman grafik.</p>
-        </div>
-        <div class="card full">
-          <h3>Ilustrasi Bidang Koordinat</h3>
-          <canvas id="home-canvas" width="600" height="360" aria-label="Ilustrasi bidang koordinat"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- Translasi -->
-    <section id="translasi" data-id="translasi" class="container section spa-section hidden">
-      <h2>Translasi</h2>
-      <p>Pengertian: Translasi adalah pergeseran setiap titik suatu objek sejauh vektor tertentu tanpa merubah orientasi atau bentuknya.</p>
-      <p>Rumus: (x, y) → (x + a, y + b)  — a = pergeseran horizontal, b = pergeseran vertikal.</p>
-
-      <h3>Contoh Soal</h3>
-      <div class="example">
-        <p><strong>Contoh 1:</strong> Translasi titik A(2,3) dengan vektor (4,-1).</p>
-        <button class="toggle-sol" data-target="translasi-sol-1">Tampilkan Pembahasan</button>
-        <div id="translasi-sol-1" class="solution hidden">
-          <p>Langkah: (2,3) → (2+4, 3-1) = (6,2).</p>
-        </div>
-      </div>
-
-      <div class="example">
-        <p><strong>Contoh 2:</strong> Translasi segitiga P(0,0), Q(1,0), R(0,1) oleh vektor (-1,2).</p>
-        <button class="toggle-sol" data-target="translasi-sol-2">Tampilkan Pembahasan</button>
-        <div id="translasi-sol-2" class="solution hidden">
-          <p>P': P(-1,2), Q(0,2), R(-1,3).</p>
-        </div>
-      </div>
-
-      <h3>Latihan Translasi</h3>
-      <ol class="exercises">
-        <!-- 4 mudah -->
-        <li>(Mudah) Translasi titik (1,2) oleh (2,0).</li>
-        <li>(Mudah) Translasi titik (-1,3) oleh (0,-2).</li>
-        <li>(Mudah) Translasi titik (0,0) oleh (5,5).</li>
-        <li>(Mudah) Translasi titik (4,-2) oleh (-3,1).</li>
-        <!-- 4 sedang -->
-        <li>(Sedang) Translasi segitiga A(1,1), B(2,1), C(1,2) oleh vektor (3,-1).</li>
-        <li>(Sedang) Translasi titik (2,-3) oleh ( -4, 2 ).</li>
-        <li>(Sedang) Translasi persegi pusat (1,1) sisi 2 oleh vektor (0,3).</li>
-        <li>(Sedang) Translasi titik ( -2, -2 ) oleh ( 5, -3 ).</li>
-        <!-- 2 HOTS -->
-        <li>(HOTS) Jika A(x,y) ditranslasi oleh (a,b) lalu oleh (c,d), tentukan vektornya jika hasilnya A'(x+7,y-1).</li>
-        <li>(HOTS) Diberi transformasi dua translasi sehingga titik kembali ke posisi semula. Tentukan kemungkinan vektor kedua jika vektor pertama (3,4).</li>
-      </ol>
-    </section>
-
-    <!-- Refleksi -->
-    <section id="refleksi" data-id="refleksi" class="container section spa-section hidden">
-      <h2>Refleksi</h2>
-      <p>Pengertian: Refleksi (pencerminan) memetakan setiap titik ke posisi cermin terhadap suatu garis atau titik.</p>
-      <ul>
-        <li>Refleksi terhadap sumbu-X: (x,y) → (x,-y)</li>
-        <li>Refleksi terhadap sumbu-Y: (x,y) → (-x,y)</li>
-        <li>Refleksi terhadap titik O(0,0): (x,y) → (-x,-y)</li>
-        <li>Refleksi terhadap garis y = x: (x,y) → (y,x)</li>
-        <li>Refleksi terhadap garis y = -x: (x,y) → (-y,-x)</li>
-      </ul>
-
-      <h3>Contoh Soal</h3>
-      <div class="example">
-        <p><strong>Contoh 1:</strong> Refleksi titik (3,-2) terhadap sumbu-X.</p>
-        <button class="toggle-sol" data-target="refleksi-sol-1">Tampilkan Pembahasan</button>
-        <div id="refleksi-sol-1" class="solution hidden">(3,2)</div>
-      </div>
-      <div class="example">
-        <p><strong>Contoh 2:</strong> Refleksi titik (2,5) terhadap garis y=x.</p>
-        <button class="toggle-sol" data-target="refleksi-sol-2">Tampilkan Pembahasan</button>
-        <div id="refleksi-sol-2" class="solution hidden">(5,2)</div>
-      </div>
-
-      <h3>Latihan Refleksi</h3>
-      <ol class="exercises">
-        <!-- 10 soal: 4 mudah,4 sedang,2 HOTS -->
-        <li>(Mudah) Refleksi (1,2) terhadap sumbu-X.</li>
-        <li>(Mudah) Refleksi (-3,4) terhadap sumbu-Y.</li>
-        <li>(Mudah) Refleksi (2,-2) terhadap titik O.</li>
-        <li>(Mudah) Refleksi (3,1) terhadap garis y=x.</li>
-        <li>(Sedang) Refleksi segitiga dengan titik A(1,1),B(2,1),C(1,2) terhadap sumbu-Y.</li>
-        <li>(Sedang) Refleksi titik ( -4, 5 ) terhadap garis y=-x.</li>
-        <li>(Sedang) Kombinasi: refleksi terhadap sumbu-X lalu sumbu-Y. Apa hasilnya untuk (2,3)?</li>
-        <li>(Sedang) Jika hasil refleksi terhadap titik O dari (x,y) adalah (4,-6), tentukan (x,y).</li>
-        <li>(HOTS) Tentukan persamaan transformasi yang menghasilkan pertukaran koordinat dan tanda satu koordinat.</li>
-        <li>(HOTS) Buktikan bahwa refleksi terhadap garis y=x diikuti y=-x sama dengan rotasi 180° pada pusat O.</li>
-      </ol>
-    </section>
-
-    <!-- Rotasi -->
-    <section id="rotasi" data-id="rotasi" class="container section spa-section hidden">
-      <h2>Rotasi</h2>
-      <p>Pengertian: Rotasi adalah putaran suatu titik atau objek berputar pada suatu pusat dengan sudut tertentu.</p>
-      <p>Rotasi terhadap O(0,0):</p>
-      <table class="rotasi-table">
-        <tr><th>Sudut</th><th>Rumus</th></tr>
-        <tr><td>90° CCW</td><td>(x,y) → (-y,x)</td></tr>
-        <tr><td>180°</td><td>(x,y) → (-x,-y)</td></tr>
-        <tr><td>270° CCW / 90° CW</td><td>(x,y) → (y,-x)</td></tr>
-      </table>
-
-      <h3>Contoh Soal</h3>
-      <div class="example">
-        <p><strong>Contoh 1:</strong> Rotasi titik (2,1) 90° CCW.</p>
-        <button class="toggle-sol" data-target="rotasi-sol-1">Tampilkan Pembahasan</button>
-        <div id="rotasi-sol-1" class="solution hidden">Hasil: (-1,2)</div>
-      </div>
-      <div class="example">
-        <p><strong>Contoh 2:</strong> Rotasi titik (3,0) 180°.</p>
-        <button class="toggle-sol" data-target="rotasi-sol-2">Tampilkan Pembahasan</button>
-        <div id="rotasi-sol-2" class="solution hidden">Hasil: (-3,0)</div>
-      </div>
-
-      <h3>Latihan Rotasi</h3>
-      <ol class="exercises">
-        <li>(Mudah) Rotasi (1,0) 90° CCW.</li>
-        <li>(Mudah) Rotasi (0,1) 90° CW.</li>
-        <li>(Mudah) Rotasi (2,2) 180°.</li>
-        <li>(Mudah) Rotasi (-1,0) 270° CCW.</li>
-        <li>(Sedang) Rotasi segitiga A(1,0),B(2,0),C(1,1) 90° CCW.</li>
-        <li>(Sedang) Rotasi titik (3,-2) 90° CW.</li>
-        <li>(Sedang) Kombinasi rotasi 90° lalu 180° untuk (1,2).</li>
-        <li>(Sedang) Tentukan rotasi yang mengubah (x,y) menjadi ( -y, x ).</li>
-        <li>(HOTS) Buktikan sifat komposisi rotasi berlawanan arah.</li>
-        <li>(HOTS) Jelaskan rotasi non-90° pada koordinat menggunakan trigonometri.</li>
-      </ol>
-    </section>
-
-    <!-- Dilatasi -->
-    <section id="dilatasi" data-id="dilatasi" class="container section spa-section hidden">
-      <h2>Dilatasi</h2>
-      <p>Pengertian: Dilatasi adalah perubahan ukuran objek relatif terhadap suatu pusat, seringkali O(0,0).</p>
-      <p>Rumus: (x,y) → (k x, k y)  — k = faktor skala.</p>
-
-      <h3>Contoh Soal</h3>
-      <div class="example">
-        <p><strong>Contoh 1:</strong> Dilatasi titik (2,3) oleh k=2.</p>
-        <button class="toggle-sol" data-target="dilatasi-sol-1">Tampilkan Pembahasan</button>
-        <div id="dilatasi-sol-1" class="solution hidden">Hasil: (4,6)</div>
-      </div>
-      <div class="example">
-        <p><strong>Contoh 2:</strong> Dilatasi titik (-1,2) oleh k=0.5.</p>
-        <button class="toggle-sol" data-target="dilatasi-sol-2">Tampilkan Pembahasan</button>
-        <div id="dilatasi-sol-2" class="solution hidden">Hasil: (-0.5,1)</div>
-      </div>
-
-      <h3>Latihan Dilatasi</h3>
-      <ol class="exercises">
-        <li>(Mudah) Dilatasi (1,1) k=3.</li>
-        <li>(Mudah) Dilatasi (2,-1) k=0.5.</li>
-        <li>(Mudah) Dilatasi (0,0) k=5.</li>
-        <li>(Mudah) Dilatasi (-2,4) k= -1.</li>
-        <li>(Sedang) Dilatasi segitiga A(1,1),B(2,1),C(1,2) k=2.</li>
-        <li>(Sedang) Jika hasil (kx,ky) = (6,9) dan k=3, tentukan (x,y).</li>
-        <li>(Sedang) Jelaskan efek dilatasi negatif terhadap orientasi.</li>
-        <li>(Sedang) Kombinasi dilatasi dan translasi sederhana.</li>
-        <li>(HOTS) Menentukan k agar area berubah 4 kali lipat.</li>
-        <li>(HOTS) Hubungan skala linear dan jarak titik.</li>
-      </ol>
-    </section>
-
-    <!-- Latihan Soal Interaktif -->
-    <section id="latihan" data-id="latihan" class="container section spa-section hidden">
-      <h2>Latihan Soal Interaktif</h2>
-      <form id="quiz-form" class="quiz">
-        <!-- 10 soal campuran -->
-        <ol id="quiz-list">
-        </ol>
-        <div class="quiz-actions">
-          <button type="button" id="check-answers">Periksa Jawaban</button>
-          <button type="button" id="reset-quiz">Reset</button>
-        </div>
-        <div id="quiz-result" class="quiz-result" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <!-- Simulator -->
-    <section id="simulator" data-id="simulator" class="container section spa-section hidden">
-      <h2>Simulator Transformasi Geometri</h2>
-      <div class="simulator-grid">
-        <div class="sim-panel">
-          <label>Masukkan titik: <input id="sim-x" type="number" value="2" step="any"></label>
-          <label><input type="number" id="sim-y" value="1" step="any"></label>
-
-          <label>Pilih transformasi:
-            <select id="sim-type">
-              <option value="translasi">Translasi</option>
-              <option value="refleksi">Refleksi</option>
-              <option value="rotasi">Rotasi</option>
-              <option value="dilatasi">Dilatasi</option>
-            </select>
-          </label>
-
-          <div id="params">
-            <!-- parameters dynamically shown -->
-          </div>
-
-          <div class="sim-actions">
-            <button id="apply-transform" type="button">Terapkan</button>
-            <button id="reset-sim" type="button">Reset</button>
-          </div>
-
-          <div id="sim-steps" class="sim-steps"></div>
-        </div>
-
-        <div class="sim-canvas-wrap">
-          <canvas id="sim-canvas" width="600" height="600" aria-label="Canvas simulator"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tentang -->
-    <section id="tentang" data-id="tentang" class="container section spa-section hidden">
-      <h2>Tentang</h2>
-      <p>Nama pembuat: [ISI NAMA SENDIRI]</p>
-      <p>Kelas: XI</p>
-      <p>Tujuan: Membantu siswa memahami Transformasi Geometri secara visual dan interaktif.</p>
-      <p>Terima kasih kepada guru Matematika atas bimbingannya.</p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>Website pembelajaran Transformasi Geometri ini dibuat untuk memenuhi tugas Matematika kelas XI SMA.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Master Transformasi Geometri - Media Belajar Matematika</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="icon">📐</span> Master Geometri
+            </div>
+            <ul class="nav-links">
+                <li><a href="javascript:void(0)" onclick="MapsTo('beranda')">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">Materi ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="javascript:void(0)" onclick="MapsTo('translasi')">Translasi</a></li>
+                        <li><a href="javascript:void(0)" onclick="MapsTo('refleksi')">Refleksi</a></li>
+                        <li><a href="javascript:void(0)" onclick="MapsTo('rotasi')">Rotasi</a></li>
+                        <li><a href="javascript:void(0)" onclick="MapsTo('dilatasi')">Dilatasi</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" onclick="MapsTo('kuis')">Kuis Interaktif</a></li>
+                <li><a href="javascript:void(0)" onclick="MapsTo('simulator')">Simulator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-area">
+        <!-- BERANDA -->
+        <section id="beranda" class="page-section active">
+            <header class="hero-section">
+                <div class="hero-content">
+                    <h1>Selamat Belajar, Generasi Hebat! 👋</h1>
+                    <p>Mari jelajahi dunia <strong>Transformasi Geometri</strong>. Di sini, kita akan belajar bagaimana memindahkan, memutar, mencerminkan, dan mengubah ukuran objek dengan matematika.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="MapsTo('translasi')">Mulai Belajar</button>
+                        <button class="btn btn-secondary" onclick="MapsTo('kuis')">Uji Kemampuan</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://img.freepik.com/free-vector/math-concept-illustration_114360-3940.jpg" alt="Math Illustration" style="max-width: 100%; border-radius: 20px;">
+                </div>
+            </header>
+
+            <section class="intro-cards">
+                <div class="card info-card">
+                    <h3>Apa itu Transformasi Geometri?</h3>
+                    <p>Transformasi geometri adalah perubahan posisi atau ukuran suatu objek (titik, garis, atau bangun datar) pada bidang koordinat. Ada empat jenis utama yang akan kita pelajari: <strong>Translasi, Refleksi, Rotasi, dan Dilatasi</strong>.</p>
+                </div>
+                <div class="card info-card">
+                    <h3>Mengapa Ini Penting?</h3>
+                    <p>Konsep ini digunakan dalam desain grafis, pembuatan animasi film, arsitektur bangunan, hingga sistem navigasi radar pesawat terbang!</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- TRANSLASI -->
+        <section id="translasi" class="page-section">
+            <div class="topic-header">
+                <h1>➡️ Translasi (Pergeseran)</h1>
+                <p>Memindahkan setiap titik pada bidang menurut jarak dan arah tertentu.</p>
+            </div>
+
+            <div class="card theory-card">
+                <h2>Konsep Dasar</h2>
+                <p>Bayangkan kamu sedang menggeser sebuah meja di dalam kelas. Meja tersebut tidak berubah bentuk maupun ukurannya, hanya posisinya yang berubah. Itulah konsep <strong>Translasi</strong>.</p>
+                <div class="formula-box">
+                    <p>Jika titik <strong>A(x, y)</strong> ditranslasi oleh <strong>T(a, b)</strong>, maka bayangannya adalah:</p>
+                    <div class="formula">A'(x + a, y + b)</div>
+                </div>
+                <p>Di mana <em>a</em> adalah pergeseran horizontal (kanan/kiri) dan <em>b</em> adalah pergeseran vertikal (atas/bawah).</p>
+            </div>
+
+            <div class="card examples-card">
+                <h2>10 Contoh Soal & Pembahasan</h2>
+                <div class="example-list" id="translasi-examples">
+                    <div class="example-item">
+                        <span class="q-num">1</span>
+                        <p><strong>Soal:</strong> Tentukan bayangan titik A(3, 5) jika digeser oleh T(2, -4)!</p>
+                        <div class="explanation">
+                            <strong>Pembahasan:</strong><br>
+                            x' = 3 + 2 = 5<br>
+                            y' = 5 + (-4) = 1<br>
+                            Jadi, A'(5, 1).
+                        </div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">2</span>
+                        <p><strong>Soal:</strong> Titik B(-1, 2) ditranslasi oleh T(3, 4). Di mana posisi B'?</p>
+                        <div class="explanation">B'(-1+3, 2+4) = B'(2, 6).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">3</span>
+                        <p><strong>Soal:</strong> Jika C'(5, -1) adalah hasil translasi C(x, y) oleh T(-2, 3), tentukan koordinat C!</p>
+                        <div class="explanation">x-2=5 => x=7; y+3=-1 => y=-4. Jadi C(7, -4).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">4</span>
+                        <p><strong>Soal:</strong> Segitiga PQR dengan P(0,0), Q(2,0), R(0,2) digeser oleh T(1, 1). Tentukan luas bayangannya!</p>
+                        <div class="explanation">Translasi tidak mengubah luas. Luas awal = 1/2 * 2 * 2 = 2 satuan luas. Maka luas bayangan tetap 2.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">5</span>
+                        <p><strong>Soal:</strong> Garis y = x + 2 digeser oleh T(1, 2). Tentukan persamaan garis baru!</p>
+                        <div class="explanation">y-2 = (x-1) + 2 => y = x + 3.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">6</span>
+                        <p><strong>Soal:</strong> Titik D(4, 4) ditranslasi oleh T1(1, 2) dilanjutkan T2(3, 1). Tentukan D''!</p>
+                        <div class="explanation">T_total = (1+3, 2+1) = (4, 3). D'' = (4+4, 4+3) = (8, 7).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">7</span>
+                        <p><strong>Soal:</strong> Seekor semut berada di (2, 3) lalu berjalan 5 langkah ke kanan dan 2 langkah ke bawah. Di mana posisinya sekarang?</p>
+                        <div class="explanation">T(5, -2). Posisi = (2+5, 3-2) = (7, 1).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">8</span>
+                        <p><strong>Soal:</strong> Jika T(a, b) memetakan (1, 2) ke (4, 6), tentukan nilai a + b!</p>
+                        <div class="explanation">a = 4-1 = 3; b = 6-2 = 4. a+b = 7.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">9</span>
+                        <p><strong>Soal:</strong> Bayangan titik (x, y) oleh T(3, 2) adalah (1, 1). Tentukan x dan y!</p>
+                        <div class="explanation">x+3=1 => x=-2; y+2=1 => y=-1.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">10</span>
+                        <p><strong>Soal:</strong> Titik E(a, b) ditranslasi oleh T(2, a) menghasilkan E'(4, 5). Tentukan b!</p>
+                        <div class="explanation">a+2=4 => a=2; b+a=5 => b+2=5 => b=3.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFLEKSI -->
+        <section id="refleksi" class="page-section">
+            <div class="topic-header">
+                <h1>🪞 Refleksi (Pencerminan)</h1>
+                <p>Memetakan setiap titik dengan menggunakan sifat bayangan cermin.</p>
+            </div>
+
+            <div class="card theory-card">
+                <h2>Konsep Dasar</h2>
+                <p>Bayangkan kamu berdiri di depan cermin. Jarak kamu ke cermin sama dengan jarak bayanganmu ke cermin. Inilah prinsip utama <strong>Refleksi</strong>.</p>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sumbu/Garis Pencermin</th>
+                                <th>Titik Asal</th>
+                                <th>Titik Bayangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Sumbu X</td><td>(x, y)</td><td>(x, -y)</td></tr>
+                            <tr><td>Sumbu Y</td><td>(x, y)</td><td>(-x, y)</td></tr>
+                            <tr><td>Garis y = x</td><td>(x, y)</td><td>(y, x)</td></tr>
+                            <tr><td>Garis y = -x</td><td>(x, y)</td><td>(-y, -x)</td></tr>
+                            <tr><td>Titik O(0,0)</td><td>(x, y)</td><td>(-x, -y)</td></tr>
+                            <tr><td>Garis x = h</td><td>(x, y)</td><td>(2h - x, y)</td></tr>
+                            <tr><td>Garis y = k</td><td>(x, y)</td><td>(x, 2k - y)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card examples-card">
+                <h2>10 Contoh Soal & Pembahasan</h2>
+                <div class="example-list">
+                    <div class="example-item">
+                        <span class="q-num">1</span>
+                        <p><strong>Soal:</strong> Tentukan bayangan P(2, -3) jika dicerminkan terhadap sumbu X!</p>
+                        <div class="explanation">Aturan: (x, -y). Maka P'(2, -(-3)) = P'(2, 3).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">2</span>
+                        <p><strong>Soal:</strong> Bayangan titik Q(4, 5) terhadap sumbu Y adalah...</p>
+                        <div class="explanation">Aturan: (-x, y). Maka Q'(-4, 5).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">3</span>
+                        <p><strong>Soal:</strong> Refleksikan R(-1, 6) terhadap garis y = x!</p>
+                        <div class="explanation">Aturan: (y, x). Maka R'(6, -1).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">4</span>
+                        <p><strong>Soal:</strong> Titik S(3, 2) dicerminkan terhadap garis y = -x. Hasilnya?</p>
+                        <div class="explanation">Aturan: (-y, -x). Maka S'(-2, -3).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">5</span>
+                        <p><strong>Soal:</strong> Bayangan titik T(5, 4) terhadap titik asal O(0,0) adalah...</p>
+                        <div class="explanation">Aturan: (-x, -y). Maka T'(-5, -4).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">6</span>
+                        <p><strong>Soal:</strong> Tentukan bayangan A(1, 2) terhadap garis x = 3!</p>
+                        <div class="explanation">x' = 2(3) - 1 = 5; y' = 2. Jadi A'(5, 2).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">7</span>
+                        <p><strong>Soal:</strong> Tentukan bayangan B(4, -1) terhadap garis y = 2!</p>
+                        <div class="explanation">x' = 4; y' = 2(2) - (-1) = 5. Jadi B'(4, 5).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">8</span>
+                        <p><strong>Soal:</strong> Jika A'(-3, 2) adalah bayangan A terhadap sumbu Y, koordinat A adalah...</p>
+                        <div class="explanation">Kebalikan sumbu Y tetap (-x, y). Maka A(3, 2).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">9</span>
+                        <p><strong>Soal:</strong> Garis y = 2x + 1 dicerminkan terhadap sumbu X. Hasilnya?</p>
+                        <div class="explanation">-y = 2x + 1 => y = -2x - 1.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">10</span>
+                        <p><strong>Soal:</strong> Titik (a, b) dicerminkan terhadap y=x lalu terhadap sumbu X menghasilkan (2, 3). Tentukan a!</p>
+                        <div class="explanation">(a,b) --y=x--> (b,a) --sumbuX--> (b,-a) = (2,3). b=2, -a=3 => a=-3.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROTASI -->
+        <section id="rotasi" class="page-section">
+            <div class="topic-header">
+                <h1>🔄 Rotasi (Perputaran)</h1>
+                <p>Memutar setiap titik dengan sudut dan pusat tertentu.</p>
+            </div>
+
+            <div class="card theory-card">
+                <h2>Konsep Dasar</h2>
+                <p>Bayangan sebuah jarum jam yang berputar. Itulah <strong>Rotasi</strong>. Pusat rotasi biasanya di O(0,0) atau titik tertentu P(a,b).</p>
+                <div class="formula-box">
+                    <p>Rotasi sejauh <strong>θ</strong> terhadap pusat <strong>O(0,0)</strong>:</p>
+                    <div class="formula">
+                        x' = x cos θ - y sin θ<br>
+                        y' = x sin θ + y cos θ
+                    </div>
+                </div>
+                <p><em>Tips:</em> Sudut positif berarti berlawanan arah jarum jam (CCW), sudut negatif searah jarum jam (CW).</p>
+            </div>
+
+            <div class="card examples-card">
+                <h2>10 Contoh Soal & Pembahasan</h2>
+                <div class="example-list">
+                    <div class="example-item">
+                        <span class="q-num">1</span>
+                        <p><strong>Soal:</strong> Rotasikan A(4, 0) sebesar 90° terhadap O(0,0)!</p>
+                        <div class="explanation">Aturan 90°: (-y, x). Maka A'(0, 4).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">2</span>
+                        <p><strong>Soal:</strong> Bayangan B(2, 3) diputar 180° terhadap O(0,0) adalah...</p>
+                        <div class="explanation">Aturan 180°: (-x, -y). Maka B'(-2, -3).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">3</span>
+                        <p><strong>Soal:</strong> Titik C(0, 5) diputar 270° terhadap O(0,0). Hasilnya?</p>
+                        <div class="explanation">Aturan 270°: (y, -x). Maka C'(5, 0).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">4</span>
+                        <p><strong>Soal:</strong> Rotasi -90° (searah jarum jam) dari P(1, 2) adalah...</p>
+                        <div class="explanation">Sama dengan 270°: (y, -x). Maka P'(2, -1).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">5</span>
+                        <p><strong>Soal:</strong> Titik (3, 4) diputar 90° lalu 90° lagi. Hasil akhirnya?</p>
+                        <div class="explanation">Total rotasi 180°. Maka (-3, -4).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">6</span>
+                        <p><strong>Soal:</strong> Jika A'( -4, 3) adalah hasil rotasi 90° dari A, di mana A?</p>
+                        <div class="explanation">x'=-y, y'=x. -4 = -y => y=4; 3=x => x=3. Jadi A(3, 4).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">7</span>
+                        <p><strong>Soal:</strong> Titik (1, 1) diputar 45° terhadap O(0,0). Tentukan bayangannya!</p>
+                        <div class="explanation">x' = 1 cos 45 - 1 sin 45 = 0; y' = 1 sin 45 + 1 cos 45 = √2. Jadi (0, √2).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">8</span>
+                        <p><strong>Soal:</strong> Luas lingkaran dengan jari-jari 5 setelah diputar 90° adalah...</p>
+                        <div class="explanation">Rotasi tidak mengubah ukuran. Luas tetap 25π.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">9</span>
+                        <p><strong>Soal:</strong> Garis y = x diputar 90° terhadap O(0,0). Persamaan barunya?</p>
+                        <div class="explanation">Garis y=x tegak lurus dengan y=-x. Hasilnya y = -x.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">10</span>
+                        <p><strong>Soal:</strong> Titik (2, 2) diputar 360°. Di mana posisinya?</p>
+                        <div class="explanation">360° kembali ke posisi awal: (2, 2).</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DILATASI -->
+        <section id="dilatasi" class="page-section">
+            <div class="topic-header">
+                <h1>🔍 Dilatasi (Perkalian)</h1>
+                <p>Mengubah ukuran objek (memperbesar atau memperkecil).</p>
+            </div>
+
+            <div class="card theory-card">
+                <h2>Konsep Dasar</h2>
+                <p>Pikirkan tentang fitur zoom pada kamera hp-mu. Itulah <strong>Dilatasi</strong>. Objek bisa menjadi lebih besar (k > 1) atau lebih kecil (0 < k < 1).</p>
+                <div class="formula-box">
+                    <p>Dilatasi titik <strong>A(x, y)</strong> dengan pusat <strong>O(0,0)</strong> dan faktor skala <strong>k</strong>:</p>
+                    <div class="formula">A'(kx, ky)</div>
+                </div>
+            </div>
+
+            <div class="card examples-card">
+                <h2>10 Contoh Soal & Pembahasan</h2>
+                <div class="example-list">
+                    <div class="example-item">
+                        <span class="q-num">1</span>
+                        <p><strong>Soal:</strong> Titik A(2, 3) didilatasi [O, 2]. Tentukan A'!</p>
+                        <div class="explanation">A'(2*2, 3*2) = A'(4, 6).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">2</span>
+                        <p><strong>Soal:</strong> Titik B(-4, 8) didilatasi [O, 1/2]. Hasilnya?</p>
+                        <div class="explanation">B'(-4*0.5, 8*0.5) = B'(-2, 4).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">3</span>
+                        <p><strong>Soal:</strong> Bayangan P(x, y) oleh [O, 3] adalah P'(6, 9). Tentukan P!</p>
+                        <div class="explanation">3x=6 => x=2; 3y=9 => y=3. Jadi P(2, 3).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">4</span>
+                        <p><strong>Soal:</strong> Tentukan faktor skala k jika Q(2, 1) dipetakan ke Q'(10, 5)!</p>
+                        <div class="explanation">2k=10 => k=5.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">5</span>
+                        <p><strong>Soal:</strong> Segitiga dengan luas 10 satuan didilatasi dengan k = 3. Berapa luas bayangannya?</p>
+                        <div class="explanation">Luas baru = k² * Luas awal = 3² * 10 = 90.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">6</span>
+                        <p><strong>Soal:</strong> Titik (1, 2) didilatasi [O, -2]. Hasilnya?</p>
+                        <div class="explanation">(-2, -4). Faktor skala negatif berarti arah berlawanan.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">7</span>
+                        <p><strong>Soal:</strong> Lingkaran x² + y² = 4 didilatasi [O, 2]. Persamaan barunya?</p>
+                        <div class="explanation">Jari-jari awal 2, jadi jari-jari baru 2*2=4. Persamaannya x² + y² = 16.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">8</span>
+                        <p><strong>Soal:</strong> Titik (5, 5) didilatasi [O, k] menjadi (1, 1). Tentukan k!</p>
+                        <div class="explanation">5k = 1 => k = 1/5.</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">9</span>
+                        <p><strong>Soal:</strong> Titik (0, 3) didilatasi [O, 4] lalu digeser T(1, 1). Hasilnya?</p>
+                        <div class="explanation">(0, 12) --T(1,1)--> (1, 13).</div>
+                    </div>
+                    <div class="example-item">
+                        <span class="q-num">10</span>
+                        <p><strong>Soal:</strong> Persegi panjang 2x3 didilatasi k=10. Berapa keliling barunya?</p>
+                        <div class="explanation">Keliling awal = 2(2+3) = 10. Keliling baru = k * keliling awal = 10 * 10 = 100.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis" class="page-section">
+            <div class="topic-header">
+                <h1>✍️ Kuis Tantangan</h1>
+                <p>Uji sejauh mana pemahamanmu tentang Transformasi Geometri.</p>
+            </div>
+            <div class="card quiz-card">
+                <div id="quiz-container">
+                    <p>Pilih kategori kuis untuk memulai:</p>
+                    <div class="quiz-menu">
+                        <button class="btn btn-primary" onclick="startQuiz('translasi')">Translasi</button>
+                        <button class="btn btn-primary" onclick="startQuiz('refleksi')">Refleksi</button>
+                        <button class="btn btn-primary" onclick="startQuiz('rotasi')">Rotasi</button>
+                        <button class="btn btn-primary" onclick="startQuiz('dilatasi')">Dilatasi</button>
+                        <button class="btn btn-secondary" onclick="startQuiz('campuran')">Campuran</button>
+                    </div>
+                    <div id="quiz-content" style="display: none;">
+                        <div id="question-box"></div>
+                        <div id="options-box"></div>
+                        <div id="feedback-box"></div>
+                        <button id="next-btn" class="btn btn-primary" style="display: none;">Lanjut</button>
+                    </div>
+                    <div id="result-box" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULATOR -->
+        <section id="simulator" class="page-section">
+            <div class="topic-header">
+                <h1>🎮 Simulator Interaktif</h1>
+                <p>Lihat bagaimana titik bergerak secara visual!</p>
+            </div>
+            <div class="card simulator-card">
+                <div class="sim-layout">
+                    <div class="sim-controls">
+                        <div class="control-group">
+                            <label>Titik Awal (x, y)</label>
+                            <div class="input-row">
+                                <input type="number" id="sx" value="2" placeholder="x">
+                                <input type="number" id="sy" value="3" placeholder="y">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Jenis Transformasi</label>
+                            <select id="sim-type">
+                                <option value="translasi">Translasi</option>
+                                <option value="refleksi">Refleksi</option>
+                                <option value="rotasi">Rotasi</option>
+                                <option value="dilatasi">Dilatasi</option>
+                            </select>
+                        </div>
+                        <div id="dynamic-params">
+                            <!-- Dynamic inputs based on type -->
+                        </div>
+                        <button class="btn btn-primary btn-block" id="run-sim">Jalankan</button>
+                    </div>
+                    <div class="sim-canvas-area">
+                        <canvas id="sim-canvas" width="600" height="400"></canvas>
+                        <div id="sim-output">
+                            Bayangan: <span id="res-coord">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Media Pembelajaran Matematika Kelas XI. Dibuat dengan ❤️ untuk Pendidikan Indonesia.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
