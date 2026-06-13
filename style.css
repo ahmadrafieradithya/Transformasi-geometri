@@ -368,17 +368,117 @@ input, select {
 }
 
 /* Responsive */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 1rem;
+        box-shadow: var(--shadow);
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        margin-top: 0.5rem;
+    }
+
     .hero-section {
         grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        text-align: center;
     }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .hero-image {
+        order: -1; /* Put image on top on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
     .intro-cards {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
+
+    .content-area {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
     .sim-layout {
         grid-template-columns: 1fr;
     }
-    .nav-links {
-        display: none; /* Simplification for mobile */
+
+    .topic-header h1 {
+        font-size: 1.5rem;
     }
 }

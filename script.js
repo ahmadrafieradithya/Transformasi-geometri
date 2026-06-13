@@ -1,6 +1,23 @@
 // Master Transformasi Geometri - Script Utama
 // Mengelola Navigasi, Kuis, dan Simulator
 
+// --- 0. MOBILE MENU ---
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link (for mobile)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
 // --- 1. NAVIGASI ---
 function MapsTo(sectionId) {
     // Sembunyikan semua section
